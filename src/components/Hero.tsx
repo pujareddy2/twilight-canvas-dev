@@ -11,13 +11,13 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left animate-fade-in">
             <p className="text-muted text-base mb-3">Hello, I'm</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-glow my-0 mx-[222px] px-[22px] py-[22px]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-glow my-0 mx-0 py-0 px-0">
               Puja Midde
             </h1>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-primary mx-0 my-0 px-[21px] py-[10px]">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-primary mx-0 my-0 px-0 py-0">
               AI-Integrated Full Stack Developer | Building Smart Applications
             </h2>
-            <p className="text-muted text-base sm:text-lg mb-6 leading-relaxed max-w-2xl lg:mx-0 mx-[11px] py-[22px] px-[40px]">
+            <p className="text-muted text-base sm:text-lg mb-6 leading-relaxed max-w-2xl lg:mx-0 mx-0 px-0 py-0">
               I design intelligent, scalable applications that merge AI and full-stack development to deliver real-world impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
