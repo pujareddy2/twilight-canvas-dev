@@ -5,32 +5,32 @@ const Achievements = () => {
   const achievements = [
     {
       icon: Trophy,
-      title: "Flipkart Grid",
-      description: "Participant",
+      title: "Flipkart GRiD",
+      description: "Top Performer",
       year: "2024",
     },
     {
       icon: Award,
-      title: "AI Hackdates",
-      description: "Runner-up",
-      year: "2024",
+      title: "AI Hack Bays 2025",
+      description: "Runner-Up",
+      year: "2025",
     },
     {
       icon: Medal,
       title: "Infinity 2K25",
-      description: "Runner-up",
+      description: "3rd Place",
       year: "2025",
     },
     {
       icon: Star,
-      title: "State 1st Rank",
-      description: "Intermediate Education",
-      year: "2021",
+      title: "State First Rank",
+      description: "Intermediate 2022",
+      year: "2022",
     },
     {
       icon: Trophy,
-      title: "State-Level English Literacy",
-      description: "3× Competition Winner",
+      title: "State-Level English Literary",
+      description: "3× Winner",
       year: "2018-2020",
     },
   ];
@@ -38,30 +38,30 @@ const Achievements = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 text-glow">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-glow">
           Achievements
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {achievements.map((achievement, index) => (
             <Card 
               key={index} 
-              className="glow-purple bg-card/50 backdrop-blur-sm border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 animate-fade-in"
+              className="glow-purple bg-card/50 backdrop-blur-sm border-2 border-secondary/20 hover:border-secondary/40 transition-all duration-300 animate-fade-in hover:scale-105"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <CardContent className="pt-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-secondary/20 rounded-lg">
-                    <achievement.icon className="w-8 h-8 text-secondary" />
+              <CardContent className="pt-5">
+                <div className="flex items-start gap-3">
+                  <div className="p-2.5 bg-secondary/20 rounded-lg">
+                    <achievement.icon className="w-6 h-6 text-secondary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-foreground mb-1">
+                    <h3 className="text-base font-semibold text-foreground mb-1">
                       {achievement.title}
                     </h3>
-                    <p className="text-muted-foreground text-base mb-2">
+                    <p className="text-muted-foreground text-sm mb-1.5">
                       {achievement.description}
                     </p>
-                    <span className="text-sm text-primary font-medium">
+                    <span className="text-xs text-primary font-medium">
                       {achievement.year}
                     </span>
                   </div>

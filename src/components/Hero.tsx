@@ -12,31 +12,37 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left animate-fade-in">
-            <p className="text-muted text-lg mb-4">Hello, I'm</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-glow">
+            <p className="text-muted text-base mb-3">Hello, I'm</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-glow">
               Puja Midde
             </h1>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 text-primary">
-              AI/ML Developer & Full Stack Engineer
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-primary">
+              AI-Integrated Full Stack Developer | Building Smart Applications
             </h2>
-            <p className="text-muted text-lg sm:text-xl mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Passionate about building intelligent systems that solve real-world problems. 
-              Specializing in AI/ML, computer vision, and full-stack development with a focus 
-              on creating impactful solutions for healthcare, education, and legal tech.
+            <p className="text-muted text-base sm:text-lg mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              I design intelligent, scalable applications that merge AI and full-stack development to deliver real-world impact.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a href="/Puja_Cv.pdf" download>
-                <Button size="lg" className="glow-soft text-lg px-8 py-6">
+                <Button size="lg" className="glow-soft text-base px-6 py-5">
                   Download CV
                 </Button>
               </a>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="glow-purple text-lg px-8 py-6 border-2"
+                className="glow-purple text-base px-6 py-5 border-2"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Contact Me
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="glow-purple text-base px-6 py-5 border-2"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Projects
               </Button>
             </div>
           </div>
@@ -47,8 +53,8 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl blur-2xl animate-glow-pulse" />
               <img 
                 src={profilePhoto} 
-                alt="Puja Midde - AI/ML Developer" 
-                className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl border-2 border-primary/20"
+                alt="Puja Midde - AI-Integrated Full Stack Developer" 
+                className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 object-cover rounded-3xl border-2 border-primary/20"
               />
             </div>
           </div>

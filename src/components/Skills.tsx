@@ -1,52 +1,52 @@
-import { Brain, Code, Database } from "lucide-react";
+import { Code, Brain, Cloud } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
   const skills = [
     {
-      icon: Brain,
-      title: "AI/ML",
-      items: ["TensorFlow", "PyTorch", "Computer Vision", "NLP", "Deep Learning"],
-    },
-    {
       icon: Code,
-      title: "Development",
-      items: ["React", "JavaScript", "TypeScript", "HTML/CSS", "Node.js"],
+      title: "Languages",
+      items: ["Python", "Java", "C", "HTML", "CSS", "JavaScript"],
     },
     {
-      icon: Database,
-      title: "Database",
-      items: ["SQL", "Firebase", "MongoDB", "PostgreSQL", "Redis"],
+      icon: Brain,
+      title: "AI & ML",
+      items: ["TensorFlow", "Scikit-learn", "NLP", "LLMs", "Generative AI", "OpenCV"],
+    },
+    {
+      icon: Cloud,
+      title: "Cloud & Tools",
+      items: ["GitHub", "Firebase", "Power BI", "MySQL", "Oracle Cloud", "Google Cloud"],
     },
   ];
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 text-glow">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-glow">
           Technical Skills
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <Card 
               key={index} 
-              className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 transition-all duration-300"
+              className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105"
             >
               <CardHeader>
-                <div className="mb-4">
-                  <skill.icon className="w-12 h-12 text-primary" />
+                <div className="mb-3">
+                  <skill.icon className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-2xl text-foreground">{skill.title}</CardTitle>
+                <CardTitle className="text-xl text-foreground">{skill.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5">
                   {skill.items.map((item, itemIndex) => (
                     <li 
                       key={itemIndex} 
-                      className="text-muted-foreground text-lg flex items-center"
+                      className="text-muted-foreground text-sm flex items-center hover:text-primary transition-colors cursor-default"
                     >
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3" />
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                       {item}
                     </li>
                   ))}

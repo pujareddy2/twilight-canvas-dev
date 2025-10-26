@@ -26,28 +26,28 @@ const Contact = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative" id="contact">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-16 text-glow">
-          Get In Touch
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-glow">
+          Let's Connect
         </h2>
         
         <Card className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground text-center">
+            <CardTitle className="text-xl text-foreground text-center">
               Let's Build Something Amazing Together
             </CardTitle>
-            <p className="text-muted-foreground text-center text-lg mt-2">
+            <p className="text-muted-foreground text-center text-base mt-2">
               I'm always interested in hearing about new projects and opportunities
             </p>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <Input
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary text-lg h-12 glow-soft"
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 glow-soft"
                 />
               </div>
               <div>
@@ -57,7 +57,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary text-lg h-12 glow-soft"
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 glow-soft"
                 />
               </div>
               <div>
@@ -66,45 +66,49 @@ const Contact = () => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  rows={6}
-                  className="bg-background/50 border-primary/20 focus:border-primary text-lg resize-none glow-soft"
+                  rows={5}
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base resize-none glow-soft"
                 />
               </div>
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full text-lg py-6 glow-soft hover:bg-primary hover:text-background transition-all duration-300"
+                className="w-full text-base py-5 glow-soft hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 Send Message
               </Button>
             </form>
             
-            <div className="mt-8 pt-8 border-t border-primary/20">
-              <p className="text-center text-muted-foreground mb-4 text-lg">Connect with me</p>
-              <div className="flex justify-center gap-4">
+            <div className="mt-6 pt-6 border-t border-primary/20">
+              <p className="text-center text-muted-foreground mb-3 text-base">Connect with me</p>
+              <div className="flex flex-col gap-2 text-center text-sm text-muted-foreground mb-4">
+                <p>Email: middepuja1005@gmail.com</p>
+                <p>Phone: +91 9121290915</p>
+              </div>
+              <div className="flex justify-center gap-3">
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-12 h-12"
-                  onClick={() => window.open('mailto:puja.midde@example.com')}
+                  className="glow-purple border-2 w-10 h-10"
+                  onClick={() => window.open('mailto:middepuja1005@gmail.com')}
                 >
-                  <Mail className="w-6 h-6" />
+                  <Mail className="w-5 h-5" />
                 </Button>
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-12 h-12"
-                  onClick={() => window.open('https://linkedin.com/in/puja-midde', '_blank')}
+                  className="glow-purple border-2 w-10 h-10"
+                  onClick={() => window.open('https://linkedin.com/in/puja-midde3', '_blank')}
                 >
-                  <Linkedin className="w-6 h-6" />
+                  <Linkedin className="w-5 h-5" />
                 </Button>
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-12 h-12"
-                  onClick={() => window.open('https://github.com/puja-midde', '_blank')}
+                  className="glow-purple border-2 w-10 h-10"
+                  onClick={() => window.open('https://github.com/pujareddy2', '_blank')}
                 >
-                  <Github className="w-6 h-6" />
+                  <Github className="w-5 h-5" />
                 </Button>
               </div>
             </div>

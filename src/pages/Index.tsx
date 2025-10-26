@@ -9,16 +9,16 @@ const Index = () => {
   return (
     <main className="min-h-screen">
       <Hero />
-      <Skills />
       <Projects />
+      <Skills />
       <Achievements />
       <Certifications />
       <Contact />
       
       {/* Footer */}
-      <footer className="py-8 text-center border-t border-primary/20">
-        <p className="text-muted-foreground text-base">
-          © 2025 Puja Midde. Built with passion and AI.
+      <footer className="py-6 text-center border-t border-primary/20">
+        <p className="text-muted-foreground text-sm">
+          © 2025 Puja Midde • Built with clarity & creativity.
         </p>
       </footer>
     </main>
