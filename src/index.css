@@ -68,27 +68,50 @@ All colors MUST be HSL.
 
 @layer utilities {
   .glow-soft {
-    box-shadow: 0 0 20px hsl(var(--glow-teal) / 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px hsl(var(--glow-teal) / 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glow-soft:hover {
-    box-shadow: 0 0 30px hsl(var(--glow-teal) / 0.5);
-    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 40px hsl(var(--glow-teal) / 0.3), 0 0 60px hsl(var(--glow-teal) / 0.1);
+    transform: translateY(-4px) scale(1.02);
   }
   
   .glow-purple {
-    box-shadow: 0 0 20px hsl(var(--glow-purple) / 0.3);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px hsl(var(--glow-purple) / 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glow-purple:hover {
-    box-shadow: 0 0 30px hsl(var(--glow-purple) / 0.5);
-    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 40px hsl(var(--glow-purple) / 0.3), 0 0 60px hsl(var(--glow-purple) / 0.1);
+    transform: translateY(-4px) scale(1.02);
   }
   
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--glow-teal) / 0.5);
+    text-shadow: 0 0 20px hsl(var(--glow-teal) / 0.5), 0 0 40px hsl(var(--glow-teal) / 0.3);
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      text-shadow: 0 0 20px hsl(var(--glow-teal) / 0.5), 0 0 40px hsl(var(--glow-teal) / 0.3);
+    }
+    50% {
+      text-shadow: 0 0 30px hsl(var(--glow-teal) / 0.7), 0 0 60px hsl(var(--glow-teal) / 0.4);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
   
   .gradient-radial {

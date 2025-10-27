@@ -26,11 +26,11 @@ const Contact = () => {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative" id="contact">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-glow">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-glow animate-slide-down">
           Let's Connect
         </h2>
         
-        <Card className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20">
+        <Card className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20 animate-scale-in">
           <CardHeader>
             <CardTitle className="text-xl text-foreground text-center">
               Let's Build Something Amazing Together
@@ -47,7 +47,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 glow-soft"
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 transition-all duration-300 focus:shadow-[0_0_20px_rgba(72,209,204,0.3)]"
                 />
               </div>
               <div>
@@ -57,7 +57,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 glow-soft"
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base h-11 transition-all duration-300 focus:shadow-[0_0_20px_rgba(72,209,204,0.3)]"
                 />
               </div>
               <div>
@@ -67,13 +67,13 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={5}
-                  className="bg-background/50 border-primary/20 focus:border-primary text-base resize-none glow-soft"
+                  className="bg-background/50 border-primary/20 focus:border-primary text-base resize-none transition-all duration-300 focus:shadow-[0_0_20px_rgba(72,209,204,0.3)]"
                 />
               </div>
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full text-base py-5 glow-soft hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="w-full text-base py-6 glow-soft hover:bg-primary hover:text-primary-foreground transition-all duration-500 hover:scale-105"
               >
                 Send Message
               </Button>
@@ -82,33 +82,33 @@ const Contact = () => {
             <div className="mt-6 pt-6 border-t border-primary/20">
               <p className="text-center text-muted-foreground mb-3 text-base">Connect with me</p>
               <div className="flex flex-col gap-2 text-center text-sm text-muted-foreground mb-4">
-                <p>Email: middepuja1005@gmail.com</p>
-                <p>Phone: +91 9121290915</p>
+                <p className="hover:text-primary transition-colors duration-300">Email: middepuja1005@gmail.com</p>
+                <p className="hover:text-primary transition-colors duration-300">Phone: +91 9121290915</p>
               </div>
-              <div className="flex justify-center gap-3">
+              <div className="flex justify-center gap-4">
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-10 h-10"
+                  className="glow-purple border-2 w-12 h-12 transition-all duration-300 hover:scale-110"
                   onClick={() => window.open('mailto:middepuja1005@gmail.com')}
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-6 h-6" />
                 </Button>
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-10 h-10"
+                  className="glow-purple border-2 w-12 h-12 transition-all duration-300 hover:scale-110"
                   onClick={() => window.open('https://linkedin.com/in/puja-midde3', '_blank')}
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-6 h-6" />
                 </Button>
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="glow-purple border-2 w-10 h-10"
+                  className="glow-purple border-2 w-12 h-12 transition-all duration-300 hover:scale-110"
                   onClick={() => window.open('https://github.com/pujareddy2', '_blank')}
                 >
-                  <Github className="w-5 h-5" />
+                  <Github className="w-6 h-6" />
                 </Button>
               </div>
             </div>

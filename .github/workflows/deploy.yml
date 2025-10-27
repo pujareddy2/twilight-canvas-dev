@@ -1,5 +1,7 @@
 name: Deploy to GitHub Pages
 
+# Grant the workflow explicit permission to write repository contents so the
+# deploy action can push the `gh-pages` branch when necessary.
 permissions:
   contents: write
 
@@ -41,93 +43,3 @@ jobs:
           publish_branch: gh-pages
           allow_empty_commit: false
           commit_message: 'chore: deploy site via GitHub Actions'
-name: Deploy to GitHub Pages
-
-# Grant the workflow explicit permission to write repository contents so the
-# deploy action can push the `gh-pages` branch when necessary.
-permissions:
-  contents: write
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Show build output (debug)
-        run: |
-          echo "--- dist contents ---"
-          ls -la dist || true
-          echo "--- end dist ---"
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          # create the branch if it doesn't exist
-          allow_empty_commit: false
-          # Use a clear commit message so it's easy to spot in history
-          commit_message: "chore: deploy site via GitHub Actions"
-
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Show build output (debug)
-        run: |
-          echo "--- dist contents ---"
-          ls -la dist || true
-          echo "--- end dist ---"
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-
-# Grant the workflow explicit permission to write repository contents so the
-# deploy action can push the `gh-pages` branch when necessary.
-permissions:
-  contents: write
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          # create the branch if it doesn't exist
-          allow_empty_commit: false
-          # Use a clear commit message so it's easy to spot in history
-          commit_message: "chore: deploy site via GitHub Actions"
