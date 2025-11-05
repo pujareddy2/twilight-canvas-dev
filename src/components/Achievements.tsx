@@ -11,7 +11,7 @@ const Achievements = () => {
     },
     {
       icon: Award,
-      title: "AI Hack Bays 2025",
+      title: "AI Hack Days 2025",
       description: "Runner-Up",
       year: "2025",
     },
