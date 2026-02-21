@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronUp, ExternalLink, Github, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, Github, Star, BarChart3 } from "lucide-react";
 import ayucareImg from "@/assets/projects/ayucare.webp";
 import smartAttendanceImg from "@/assets/projects/smart_attendance.webp";
+import legalGuardianImg from "@/assets/projects/legal_guardian.webp";
+import knnSvmImg from "@/assets/projects/knn_svm.webp";
 
 interface Project {
   title: string;
@@ -16,6 +18,7 @@ interface Project {
   github?: string;
   image?: string;
   flagship?: boolean;
+  badge?: string;
 }
 
 const Projects = () => {
@@ -28,7 +31,7 @@ const Projects = () => {
       role: "Integrated OpenAI API for conversational AI, trained custom datasets using Teachable Machine for classification, and designed a responsive conversational interface.",
       technicalImplementation: "Built backend logic for response generation, optimized prompt engineering for contextual health guidance, and structured data pipeline for user personalization.",
       techStack: "Python, OpenAI API, Teachable Machine, HTML, CSS",
-      outcome: "Used by 100+ users, improved accessibility to AI-driven natural wellness insights. Runner-Up at AI Hack Days 2025.",
+      outcome: "Built and demonstrated a functional AI-powered health assistant integrating LLM-based conversational logic and classification workflows. Presented at AI Hack Days 2025 and secured Runner-Up position.",
       github: "https://github.com/Ujasvi29/AyuCare",
       image: ayucareImg,
       flagship: true,
@@ -43,13 +46,26 @@ const Projects = () => {
       image: smartAttendanceImg,
     },
     {
-      title: "KNN vs SVM: Comparative Analysis of Classification Models",
-      problemStatement: "Analyzed and compared distance-based and margin-based supervised learning algorithms to evaluate performance across structured datasets.",
-      role: "Designed experiment pipeline, performed data preprocessing, and conducted systematic model evaluation.",
-      technicalImplementation: "Performed data preprocessing and feature scaling. Tuned hyperparameters (k-value for KNN, C and kernel for SVM). Evaluated models using Accuracy, Precision, Recall, F1-score. Compared confusion matrices and visualized decision boundaries.",
-      techStack: "Python, Scikit-learn, NumPy, Pandas, Matplotlib",
-      outcome: "Demonstrated practical understanding of bias-variance tradeoff and model performance analysis for classification problems.",
+      title: "Legal Document Intelligence System",
+      problemStatement: "Developed an AI-driven system to analyze and summarize complex legal documents for improved readability and faster interpretation.",
+      role: "Designed NLP-based processing pipeline for extracting key clauses and generating structured summaries.",
+      technicalImplementation: "Implemented text preprocessing and tokenization. Applied TF-IDF for feature extraction. Used classification models for document categorization. Structured summarized outputs for clarity and usability.",
+      techStack: "Python, Scikit-learn, NLP, TF-IDF, HTML, CSS",
+      outcome: "Demonstrated practical NLP implementation for domain-specific text analysis and document intelligence.",
       github: "https://github.com/pujareddy2",
+      image: legalGuardianImg,
+    },
+    {
+      title: "Visual Pattern Classifier – KNN vs SVM Interactive Analysis",
+      problemStatement: "Built an interactive machine learning visualization app to compare distance-based and margin-based classifiers on structured datasets.",
+      role: "Designed full ML experiment pipeline including preprocessing, scaling, hyperparameter tuning, evaluation, and deployment.",
+      technicalImplementation: "Implemented KNN and SVM using Scikit-learn. Tuned hyperparameters (k-value, C, kernel). Evaluated using Accuracy, Precision, Recall, F1-score. Compared confusion matrices. Visualized decision boundaries. Deployed interactive demo using Streamlit.",
+      techStack: "Python, Scikit-learn, NumPy, Pandas, Matplotlib, Streamlit",
+      outcome: "Showcased comparative model behavior and bias-variance tradeoff through real-time interactive visualization.",
+      liveDemo: "https://visual-pattern-classifier.streamlit.app/",
+      github: "https://github.com/pujareddy2",
+      image: knnSvmImg,
+      badge: "Interactive ML Visualization",
     },
   ];
 
@@ -90,10 +106,15 @@ const Projects = () => {
                   
                   {/* Project Content */}
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
                       {project.flagship && (
                         <span className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">
                           <Star className="w-3 h-3" /> Flagship Project
+                        </span>
+                      )}
+                      {project.badge && (
+                        <span className="flex items-center gap-1 text-xs font-medium text-accent-foreground bg-accent/20 px-2 py-1 rounded">
+                          <BarChart3 className="w-3 h-3" /> {project.badge}
                         </span>
                       )}
                     </div>
@@ -117,7 +138,7 @@ const Projects = () => {
                           size="sm"
                           variant="outline" 
                           className="glow-purple border-2 flex items-center gap-2 text-sm transition-all duration-300"
-                          onClick={() => window.open(project.liveDemo, '_blank')}
+                          onClick={() => window.open(project.liveDemo, '_blank', 'noopener,noreferrer')}
                         >
                           Live Demo <ExternalLink className="w-3 h-3" />
                         </Button>
@@ -127,7 +148,7 @@ const Projects = () => {
                           size="sm"
                           variant="outline" 
                           className="glow-purple border-2 flex items-center gap-2 text-sm transition-all duration-300"
-                          onClick={() => window.open(project.github, '_blank')}
+                          onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
                         >
                           GitHub <Github className="w-3 h-3" />
                         </Button>
