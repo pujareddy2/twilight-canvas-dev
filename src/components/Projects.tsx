@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChevronDown, ChevronUp, ExternalLink, Github } from "lucide-react";
-import legalGuardianImg from "@/assets/projects/legal_guardian.webp";
-import launchpointImg from "@/assets/projects/launchpoint.webp";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { ChevronDown, ChevronUp, ExternalLink, Github, Star } from "lucide-react";
 import ayucareImg from "@/assets/projects/ayucare.webp";
 import smartAttendanceImg from "@/assets/projects/smart_attendance.webp";
 
 interface Project {
   title: string;
-  summary: string;
+  problemStatement: string;
   role: string;
+  technicalImplementation: string;
   techStack: string;
   outcome: string;
   liveDemo?: string;
   github?: string;
-  image: string;
+  image?: string;
+  flagship?: boolean;
 }
 
 const Projects = () => {
@@ -23,40 +23,33 @@ const Projects = () => {
 
   const projects: Project[] = [
     {
-      title: "Legal Guardian AI",
-      summary: "AI-powered document verification system that detects forged certificates.",
-      role: "Designed and developed the FastAPI-based backend using Python. Integrated ML models with Scikit-learn for real-time document verification. Built cryptographic hashing and Firestore data layer for integrity.",
-      techStack: "Python, FastAPI, Firestore, Scikit-learn, Cryptographic Hashing",
-      outcome: "Enabled 90% faster document analysis and improved detection accuracy by 35%.",
-      github: "https://github.com/pujareddy2/legal-guardian-ai-hackathon",
-      image: legalGuardianImg,
-    },
-    {
-      title: "LaunchPoint",
-      summary: "Interactive online lodge booking platform for mountain retreats.",
-      role: "Designed and implemented the UI/UX for hotel search, pricing, and amenity selection. Created booking flow and secure online payment system.",
-      techStack: "HTML, CSS, JavaScript",
-      outcome: "Fully functional, responsive platform with seamless booking workflow.",
-      liveDemo: "https://lovable.dev/projects/d511445c-6ed1-4da8-ac09-c5e51eb7f3a5",
-      github: "https://github.com/pujareddy2/launch-point-lab",
-      image: launchpointImg,
-    },
-    {
       title: "AyuCare – Ayurvedic Health Assistant",
-      summary: "Runner-Up at AI Hack Bays 2025 — AI Ayurvedic health assistant integrating OpenAI API & Teachable Machine.",
-      role: "Integrated OpenAI API and Teachable Machine for Ayurvedic health recommendations. Designed conversational UI and built dataset for personalized suggestions.",
+      problemStatement: "Developed an AI-powered Ayurvedic health assistant to provide personalized wellness recommendations using natural remedies.",
+      role: "Integrated OpenAI API for conversational AI, trained custom datasets using Teachable Machine for classification, and designed a responsive conversational interface.",
+      technicalImplementation: "Built backend logic for response generation, optimized prompt engineering for contextual health guidance, and structured data pipeline for user personalization.",
       techStack: "Python, OpenAI API, Teachable Machine, HTML, CSS",
-      outcome: "Used by 100+ users, improved access to AI-driven natural wellness insights.",
+      outcome: "Used by 100+ users, improved accessibility to AI-driven natural wellness insights. Runner-Up at AI Hack Days 2025.",
       github: "https://github.com/Ujasvi29/AyuCare",
       image: ayucareImg,
+      flagship: true,
     },
     {
       title: "Smart Attendance System",
-      summary: "Computer Vision-based attendance tracker for educational institutions.",
-      role: "Developed the face recognition model using OpenCV, integrated real-time webcam data, and connected with MySQL for storage. Built user interface for attendance tracking.",
+      problemStatement: "Designed a computer vision-based attendance system to automate classroom attendance tracking.",
+      role: "Implemented real-time face detection and recognition pipeline using OpenCV, integrated webcam stream processing, and connected MySQL database for persistent storage.",
+      technicalImplementation: "Built Flask-based backend for attendance logging, optimized detection accuracy under varying lighting conditions, and reduced manual verification errors.",
       techStack: "Python, OpenCV, Flask, MySQL",
-      outcome: "Reduced manual attendance work by 80%; improved speed and reliability in classrooms.",
+      outcome: "Reduced manual attendance effort by 80%, improved speed and reliability in classroom tracking.",
       image: smartAttendanceImg,
+    },
+    {
+      title: "KNN vs SVM: Comparative Analysis of Classification Models",
+      problemStatement: "Analyzed and compared distance-based and margin-based supervised learning algorithms to evaluate performance across structured datasets.",
+      role: "Designed experiment pipeline, performed data preprocessing, and conducted systematic model evaluation.",
+      technicalImplementation: "Performed data preprocessing and feature scaling. Tuned hyperparameters (k-value for KNN, C and kernel for SVM). Evaluated models using Accuracy, Precision, Recall, F1-score. Compared confusion matrices and visualized decision boundaries.",
+      techStack: "Python, Scikit-learn, NumPy, Pandas, Matplotlib",
+      outcome: "Demonstrated practical understanding of bias-variance tradeoff and model performance analysis for classification problems.",
+      github: "https://github.com/pujareddy2",
     },
   ];
 
@@ -75,24 +68,37 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="glow-soft bg-card/50 backdrop-blur-sm border-2 border-primary/20 hover:border-primary/40 transition-all duration-500 animate-fade-in"
+              className={`bg-card/50 backdrop-blur-sm border-2 transition-all duration-500 animate-fade-in ${
+                project.flagship 
+                  ? "border-primary/40 glow-soft shadow-[0_0_30px_rgba(72,209,204,0.15)]" 
+                  : "border-primary/20 hover:border-primary/40 glow-soft"
+              }`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               <CardContent className="pt-6">
-                <div className="grid md:grid-cols-[200px,1fr] gap-6">
+                <div className={`grid ${project.image ? "md:grid-cols-[200px,1fr]" : ""} gap-6`}>
                   {/* Project Image */}
-                  <div className="w-full h-48 md:h-full rounded-lg overflow-hidden bg-muted/20 glow-soft">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
-                  </div>
+                  {project.image && (
+                    <div className="w-full h-48 md:h-full rounded-lg overflow-hidden bg-muted/20 glow-soft">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                    </div>
+                  )}
                   
                   {/* Project Content */}
                   <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      {project.flagship && (
+                        <span className="flex items-center gap-1 text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">
+                          <Star className="w-3 h-3" /> Flagship Project
+                        </span>
+                      )}
+                    </div>
                     <CardTitle className="text-xl sm:text-2xl text-foreground mb-2">{project.title}</CardTitle>
-                    <p className="text-muted-foreground text-sm sm:text-base mb-4">{project.summary}</p>
+                    <p className="text-muted-foreground text-sm sm:text-base mb-4">{project.problemStatement}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       <Button 
@@ -101,13 +107,9 @@ const Projects = () => {
                         className="glow-soft flex items-center gap-2 text-sm transition-all duration-300"
                       >
                         {expandedProject === index ? (
-                          <>
-                            Hide Case Study <ChevronUp className="w-3 h-3" />
-                          </>
+                          <>Hide Details <ChevronUp className="w-3 h-3" /></>
                         ) : (
-                          <>
-                            View Case Study <ChevronDown className="w-3 h-3" />
-                          </>
+                          <>View Details <ChevronDown className="w-3 h-3" /></>
                         )}
                       </Button>
                       {project.liveDemo && (
@@ -139,11 +141,15 @@ const Projects = () => {
                           <p className="text-muted-foreground text-sm">{project.role}</p>
                         </div>
                         <div>
+                          <h4 className="text-base font-semibold text-primary mb-1">Technical Implementation</h4>
+                          <p className="text-muted-foreground text-sm">{project.technicalImplementation}</p>
+                        </div>
+                        <div>
                           <h4 className="text-base font-semibold text-primary mb-1">Tech Stack</h4>
                           <p className="text-muted-foreground text-sm">{project.techStack}</p>
                         </div>
                         <div>
-                          <h4 className="text-base font-semibold text-primary mb-1">Outcome</h4>
+                          <h4 className="text-base font-semibold text-primary mb-1">Outcome / Impact</h4>
                           <p className="text-muted-foreground text-sm">{project.outcome}</p>
                         </div>
                       </div>

@@ -16,7 +16,7 @@ const Hero = () => {
               Puja Midde
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 text-primary mx-0 my-0 px-0 py-0 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              AI-Integrated Full Stack Developer | Building Smart Applications
+              Applied AI & Machine Learning Enthusiast | Building Real-World Intelligent Systems
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg mb-8 leading-relaxed max-w-2xl lg:mx-0 mx-0 px-0 py-0 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               I design intelligent, scalable applications that merge AI and full-stack development to deliver real-world impact.

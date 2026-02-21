@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Trophy, Award, Medal, Star } from "lucide-react";
+import { Trophy, Award, Medal } from "lucide-react";
 
 const Achievements = () => {
   const achievements = [
@@ -21,18 +21,6 @@ const Achievements = () => {
       description: "3rd Place",
       year: "2025",
     },
-    {
-      icon: Star,
-      title: "State First Rank",
-      description: "Intermediate 2022",
-      year: "2022",
-    },
-    {
-      icon: Trophy,
-      title: "State-Level English Literary",
-      description: "3× Winner",
-      year: "2018-2020",
-    },
   ];
 
   return (
@@ -42,7 +30,7 @@ const Achievements = () => {
           Achievements
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {achievements.map((achievement, index) => (
             <Card 
               key={index} 

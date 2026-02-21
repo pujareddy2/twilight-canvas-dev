@@ -1,4 +1,4 @@
-import { Code, Brain, Cloud } from "lucide-react";
+import { Code, Brain, Database } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Skills = () => {
@@ -10,13 +10,20 @@ const Skills = () => {
     },
     {
       icon: Brain,
-      title: "AI & ML",
-      items: ["TensorFlow", "Scikit-learn", "NLP", "LLMs", "Generative AI", "OpenCV"],
+      title: "AI & Machine Learning",
+      items: [
+        "Supervised Learning (Logistic Regression, Naive Bayes, KNN, SVM)",
+        "Model Evaluation (Precision, Recall, F1-score)",
+        "NLP (TF-IDF, Text Classification)",
+        "Computer Vision (OpenCV)",
+        "LLM Integration (OpenAI API)",
+        "Generative AI Concepts",
+      ],
     },
     {
-      icon: Cloud,
-      title: "Cloud & Tools",
-      items: ["GitHub", "Firebase", "Power BI", "MySQL", "Oracle Cloud", "Google Cloud"],
+      icon: Database,
+      title: "Data & Tools",
+      items: ["Pandas, NumPy", "MySQL", "Git & GitHub", "Flask", "Power BI", "Oracle Cloud, Google Cloud"],
     },
   ];
 
@@ -47,7 +54,7 @@ const Skills = () => {
                       key={itemIndex} 
                       className="text-muted-foreground text-sm flex items-center hover:text-primary transition-all duration-300 cursor-default hover:translate-x-1"
                     >
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3 group-hover:animate-pulse" />
+                      <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0 group-hover:animate-pulse" />
                       {item}
                     </li>
                   ))}

@@ -83,7 +83,6 @@ const Contact = () => {
               <p className="text-center text-muted-foreground mb-3 text-base">Connect with me</p>
               <div className="flex flex-col gap-2 text-center text-sm text-muted-foreground mb-4">
                 <p className="hover:text-primary transition-colors duration-300">Email: middepuja1005@gmail.com</p>
-                <p className="hover:text-primary transition-colors duration-300">Phone: +91 9121290915</p>
               </div>
               <div className="flex justify-center gap-4">
                 <Button 
